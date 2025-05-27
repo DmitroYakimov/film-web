@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
-import paintingImage from './your-image.jpg';
+import paintingImage from '@/../public/picture.jpg';
+import { Box } from '@mui/material';
+
 
 type Props = {
   onClick: () => void;
@@ -8,24 +10,38 @@ type Props = {
 
 export default function Painting({ onClick }: Props) {
   return (
-    <div
+     <Box
       onClick={onClick}
-      style={{
-        width: '66%',
+      sx={{
+        "@keyframes tilt-animation": {
+                    "0%": {
+                        transform: 'rotate(5deg)'
+                    },
+                    "50%": {
+                        transform: 'rotate(-3deg)'
+                    },
+                    "100%": {
+                        transform: 'rotate(4deg)'
+                    }
+                },
+        width: '35%',
         margin: 'auto',
-        transformStyle: 'preserve-3d',
-        transition: 'transform 0.3s',
-      }}
-      onMouseMove={(e) => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 30;
-        const y = (e.clientY / window.innerHeight - 0.5) * 30;
-        (e.currentTarget as HTMLDivElement).style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.transform = 'rotateY(0deg) rotateX(0deg)';
+        mt: '55px',
+        cursor: 'pointer',
+        '&:hover': {
+          animation: 'tilt-animation 0.6s steps(1, end) infinite',
+        },
       }}
     >
-      <Image src={paintingImage} alt="Painting" style={{ width: '100%', height: 'auto' }} />
-    </div>
+      <Image
+        src={paintingImage}
+        alt="Painting"
+        style={{
+          width: '100%',
+          height: 'auto',
+          display: 'block',
+        }}
+      />
+    </Box>
   );
 }

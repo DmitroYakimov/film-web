@@ -4,13 +4,12 @@ export const ClickArrow = () => (
   <Box
     sx={{
       position: 'absolute',
-      bottom: 40,
-      left: '50%',
-      transform: 'translateX(-50%)',
+      top: 40,
+      left: '25%',
+      transform: 'translateX(-50%) rotate(-30deg)',
       textAlign: 'center',
-      cursor: 'pointer',
     }}
   >
-    <Typography variant="h6">Click Me ↓</Typography>
+    <Typography variant="h1">↓</Typography>
   </Box>
 );

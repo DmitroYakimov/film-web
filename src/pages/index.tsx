@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import  Painting  from '../components/Painting';
 import { ClickArrow } from '../components/ClickArrow';
 import { PlantsBackground } from '../components/PlantsBackground';
-import { FallingStars } from '../components/FallingStars';
+import  FallingStars  from '../components/FallingStars';
 import { AudioPlayer } from '../components/AudioPlayer';
 
 export default function Home() {
