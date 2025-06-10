@@ -19,15 +19,7 @@ export default function Home() {
       <Head>
         <title>Magic Painting</title>
       </Head>
-      <Box
-        sx={{
-          position: 'relative',
-          width: '100%',
-          height: '100vh',
-          bgcolor: 'white',
-          overflow: 'hidden',
-        }}
-      >
+      <Box>
         {!activated && <ClickArrow/>}
       <Painting onClick={handleClick} />
         {activated && (
